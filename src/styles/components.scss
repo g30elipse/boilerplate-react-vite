@@ -1,0 +1,55 @@
+#toast {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 9999;
+    padding: 8px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.2s ease-in-out;
+
+    &.info {
+        @extend .is-info, .is-light;
+    }
+    
+    &.error {
+        @extend .is-danger, .is-light;
+    }
+    
+    &.success {
+        @extend .is-success, .is-light;
+    }
+}
+
+#loader {
+    background-color: #0006;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 9999;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+
+    .spinner {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        border-top: 2px solid $primary-color;
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
