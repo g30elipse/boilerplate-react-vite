@@ -11,6 +11,7 @@ function hideLoader() {
     loader.style.display = 'none';
 }
 
+const TOAST_DURATION_MS = 3000;
 function showToast(message: string, type: 'info' | 'success' | 'error' = 'info') {
     const toast = document.getElementById('toast');
     if(!toast) return console.error('Toast el #toast not found');
@@ -20,11 +21,11 @@ function showToast(message: string, type: 'info' | 'success' | 'error' = 'info')
     toast.style.opacity = "1";
     setTimeout(() => {
         toast.style.opacity = "0";
-    }, 3000);
+    }, TOAST_DURATION_MS);
     setTimeout(() => {
         toast.style.display = 'none';
         toast.classList.remove(type);
-    }, 3200);
+    }, TOAST_DURATION_MS + 200);
 }
 
 
